@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imersão Dev Alura - Aula 01</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">Calculadora de média</h1>
+        <p class="page-subtitle">Descubra qual a sua média de nota de todas as provas!
+        </p>
+        <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-conversor-de-moedas.svg" class="page-logo" alt="">
+    </div>
+        <a href="https://alura.com.br/" target="_blank">
+        <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
+        </a>
+      
+    <h2>Insira as notas abaixo para obter a média final</h2>
+      
+    <div class="container-notas">
+        <input type="number" placeholder="1º Bimestre" class="notas" id="nota1"></input>
+        <input type="number" placeholder="2º Bimestre" class="notas" id="nota2"></input>
+        <input type="number" placeholder="3º Bimestre" class="notas" id="nota3"></input>
+        <input type="number" placeholder="4º Bimestre" class="notas" id="nota4"></input>
+      
+    <div>
+        <button type="submit" onclick="calcularMedia()" class="button">Calcular Média</button></div>
+    </div>
+      
+    <div id="mediaFinal" class="final"></div>
+      
+    <script>
+          function calcularMedia() {
+            var nota1 = parseFloat(document.getElementById("nota1").value);
+            var nota2 = parseFloat(document.getElementById("nota2").value);
+            var nota3 = parseFloat(document.getElementById("nota3").value);
+            var nota4 = parseFloat(document.getElementById("nota4").value);
+
+            var media = (nota1 + nota2 + nota3 + nota4) / 4;
+
+            if (media > 7) {
+            document.getElementById("mediaFinal").innerHTML = 
+            "APROVADO, <br> Média Final: " + media.toFixed(1);
+            } else {
+            document.getElementById("mediaFinal").innerHTML = 
+            "REPROVADO, <br> Média Final: " + media.toFixed(1);
+             }
+            }
+    </script>
+</body>
+</html>
